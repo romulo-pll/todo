@@ -10,7 +10,7 @@ export default function Footer() {
             Tarefas
           </Text>
         </NavLink>
-        <NavLink to="/componentes">
+        <NavLink to="/components">
           <Text variant="body-sm-bold" className="text-gray-300">
             Componentes
           </Text>
