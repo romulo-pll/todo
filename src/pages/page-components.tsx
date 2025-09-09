@@ -29,7 +29,7 @@ export default function PageComponents() {
           <Text>Levar o dog pra passear</Text>
         </div>
 
-        <div className="flex gap-1">
+        <div className="flex gap-4">
           <Icon svg={TrashIcon} className="fill-green-base" />
           <Icon svg={CheckIcon} />
           <Icon svg={PlusIcon} />
@@ -38,20 +38,20 @@ export default function PageComponents() {
           <Icon svg={XIcon} />
         </div>
 
-        <div className="flex gap-1">
+        <div className="flex gap-4">
           <Badge variant="secondary">5</Badge>
           <Badge variant="primary">2 de 5</Badge>
           <Badge loading></Badge>
         </div>
 
-        <div>
+        <div className="flex gap-4">
           <Button icon={PlusIcon}>Nova tarefa</Button>
           <Button icon={PlusIcon} handling>
             Criando...
           </Button>
         </div>
 
-        <div className="flex gap-1">
+        <div className="flex gap-4">
           <ButtonIcon icon={TrashIcon} disabled />
           <ButtonIcon icon={TrashIcon} variant="secondary" />
           <ButtonIcon icon={TrashIcon} variant="tertiary" />
@@ -60,10 +60,10 @@ export default function PageComponents() {
         </div>
 
         <div>
-          <InputText />
+          <InputText className="w-full"/>
         </div>
 
-        <div>
+        <div className="flex gap-4">
           <InputCheckbox />
           <InputCheckbox loading />
         </div>
