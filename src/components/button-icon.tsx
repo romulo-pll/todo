@@ -13,7 +13,7 @@ export const buttonIconVariants = cva(
       variant: {
         none: "",
         primary: "bg-green-base hover:bg-green-dark",
-        secondary: "bg-gray-200 hover:bg-pink-base",
+        secondary: "bg-gray-200 hover:bg-blue-base",
         tertiary: "bg-transparent hover:bg-gray-200",
       },
       size: {
@@ -32,12 +32,10 @@ export const buttonIconVariants = cva(
       disabled: false,
       handling: false,
     },
-  }
+  },
 );
 
-interface ButtonIconProps
-  extends Omit<React.ComponentProps<"button">, "disabled" | "size">,
-    VariantProps<typeof buttonIconVariants> {
+interface ButtonIconProps extends Omit<React.ComponentProps<"button">, "disabled" | "size">, VariantProps<typeof buttonIconVariants> {
   icon: React.ComponentProps<typeof Icon>["svg"];
   loading?: boolean;
   handling?: boolean;
@@ -48,7 +46,7 @@ export const buttonIconIconVariants = cva("transition", {
     variant: {
       none: "",
       primary: "fill-white",
-      secondary: "fill-pink-base group-hover:fill-white",
+      secondary: "fill-blue-base group-hover:fill-white",
       tertiary: "fill-gray-300 group-hover:fill-gray-400",
     },
     size: {
@@ -61,23 +59,9 @@ export const buttonIconIconVariants = cva("transition", {
   },
 });
 
-export default function ButtonIcon({
-  variant,
-  size,
-  disabled,
-  className,
-  loading,
-  handling,
-  icon,
-  ...props
-}: ButtonIconProps) {
+export default function ButtonIcon({ variant, size, disabled, className, loading, handling, icon, ...props }: ButtonIconProps) {
   if (loading) {
-    return (
-      <Skeleton
-        rounded="sm"
-        className={buttonIconVariants({ variant: "none", size, className })}
-      />
-    );
+    return <Skeleton rounded="sm" className={buttonIconVariants({ variant: "none", size, className })} />;
   }
 
   return (
@@ -91,11 +75,7 @@ export default function ButtonIcon({
       })}
       {...props}
     >
-      <Icon
-        className={buttonIconIconVariants({ size, variant })}
-        animate={handling}
-        svg={handling ? SpinnerIcon : icon}
-      />
+      <Icon className={buttonIconIconVariants({ size, variant })} animate={handling} svg={handling ? SpinnerIcon : icon} />
     </button>
   );
 }

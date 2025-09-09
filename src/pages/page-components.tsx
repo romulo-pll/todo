@@ -21,7 +21,7 @@ export default function PageComponents() {
     <Container>
       <div className="grid gap-10">
         <div className="flex flex-col gap-2">
-          <Text variant="body-sm-bold" className="text-pink-base">
+          <Text variant="body-sm-bold" className="text-blue-base">
             Olá mundo!
           </Text>
           <Text className="text-green-base">Olá mundo!</Text>
